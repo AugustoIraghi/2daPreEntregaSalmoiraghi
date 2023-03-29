@@ -6,7 +6,7 @@ import axios, { Axios } from "axios"
 import { Link, Navigate, Route, Routes } from 'react-router-dom'
 import ItemDetail from './components/ItemDetail';
 import LoadingButton from '@mui/lab/LoadingButton';
-import CategorieFilter from './components/CategorieFilter';
+import ItemListContainer from './components/ItemListContainer';
 import Home from './components/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -61,12 +61,13 @@ function App() {
       <ThemeProvider theme={customTheme}>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Navigate to="/products" />} />
+          <Route path="/home" element={<Navigate to="/products" />} />
+          {/* <Route path="/home" element={<Home />} /> */}
           <Route path="/products" element={<Navigate to="/products/a" />} />
-          <Route path="/products/a" element={<CategorieFilter addDot={addDot}/>} />
+          <Route path="/products/a" element={<ItemListContainer addDot={addDot}/>} />
           <Route path="/products/a/:i" element={<ItemDetail productos={productos} addDot={addDot}/>}/>
-          <Route path='/categories/:categories' element={<CategorieFilter addDot={addDot}/>}/>
+          <Route path='/categories/:categories' element={<ItemListContainer addDot={addDot}/>}/>
           <Route path="/categories/:categories/:i" element={<ItemDetail productos={productos} addDot={addDot}/>}/>
         </Routes>
       </ThemeProvider>
