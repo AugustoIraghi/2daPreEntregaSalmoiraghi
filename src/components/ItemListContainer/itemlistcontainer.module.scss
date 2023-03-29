@@ -1,0 +1,15 @@
+.container{
+    margin: 180px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+p{
+    font-size: 3em;
+    text-decoration:underline;
+    color: #F2A61E;
+}
+.cardS{
+    margin: 20px;
+    box-shadow: 9px 6px black;
+}
